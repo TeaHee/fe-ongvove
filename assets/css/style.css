@@ -45,6 +45,10 @@ img {
     box-sizing: border-box;
 }
 
+.container {
+    max-width: 1110px;
+}
+
 .w-full {
     width: 100%;
 }
@@ -110,11 +114,15 @@ section:last-child {
     color: var(--clr-orange);
 }
 
+.search {
+    position: relative;
+}
+
 .bg-banner {
     background: url('../imgs/banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+
     text-align: center;
     color: white;
     height: 450px;
@@ -132,7 +140,7 @@ section:last-child {
 
 .search-group {
     position: absolute;
-    top: 55%;
+    bottom: -15%;
     left: 0;
     right: 0;
     background-color: white;
@@ -174,7 +182,7 @@ section:last-child {
 
 .group-icon {
     position: absolute;
-    right: 20px;
+    right: 25px;
     top: 9px;
     font-size: 15px;
     color: var(--clr-orange);
@@ -187,11 +195,101 @@ section:last-child {
     background-color: #F5F5F5F5;
 }
 
-#start, #end {
+#startDate, #endDate {
     --bs-form-select-bg-img: none;
     border: none;
     color: var(--clr-orange);
     background-color: #F5F5F5F5;
+}
+
+#startDate:hover {
+    cursor: pointer;
+}
+
+.btn-submit {
+    color: white;
+    background-color: var(--clr-orange);
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btn-submit:hover {
+    color: white;
+    background-color: #FF6347;
+}
+
+.custom-btn {
+    color: var(--clr-orange);
+    border: none;
+    background-color: #F5F5F5F5;
+}
+
+.custom-btn:focus {
+    border: none;
+    box-shadow: none;
+    color: var(--clr-orange);
+    background-color: #F5F5F5F5;
+}
+
+.custom-btn:hover {
+    cursor: pointer;
+}
+
+.fa-user-group.group-icon {
+    right: 10px;
+}
+
+.dropdown-rooms.show {
+    transform: translate3d(0px, 38.1818px, 0px);
+    width: 100%;
+    border: 1px solid var(--clr-orange);
+}
+
+.dropdown-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 14px 4px 24px;
+}
+
+.dropdown-item-row .val {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-item-row .val span {
+    margin-right: 5px;
+}
+
+.dropdown-item-row .val span:last-child {
+    margin-right: 0;
+}
+
+.dropdown-item-row .val .btn-minus, .dropdown-item-row .val .btn-add {
+    color: var(--clr-orange);
+    cursor: pointer;
+}
+
+.dropdown-item-row .val .btn-minus:hover, .dropdown-item-row .val .btn-add:hover {
+    color: #FF6347;
+}
+
+.dropdown-item-row .label {
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
+}
+
+.count-display {
+    min-width: 25px;
+    text-align: center;
+}
+
+.count-display input {
+    width: 35px;
+    border-radius: 5px;
+    text-align: center;
 }
 /*  */
 
@@ -309,13 +407,11 @@ section:last-child {
 
 .slick-content-prev {
     left: -10px;
-    top: 45%;
     z-index: 5;
 }
 
 .slick-content-next {
     right: 10px;
-    top: 45%;
     z-index: 5;
 }
 
@@ -341,18 +437,16 @@ section:last-child {
     transform: rotate(180deg);
 }
 
-.slick-tab-next.slick-disabled:before, .slick-tab-next.slick-disabled:before {
-    opacity: 0.55;
+.slick-disabled:before {
+    display: none;
 }
 
 .slick-place-prev.slick-prev {
-    top: 45%;
     left: -10px;
     z-index: 5;
 }
 
 .slick-place-next.slick-next {
-    top: 45%;
     right: 10px;
     z-index: 5;
 }
@@ -362,13 +456,11 @@ section:last-child {
 }
 
 .slick-hotel-prev.slick-prev {
-    top: 50%;
     left: -10px;
     z-index: 5;
 }
 
 .slick-hotel-next.slick-next {
-    top: 50%;
     right: 10px;
     z-index: 5;
 }
@@ -378,13 +470,11 @@ section:last-child {
 }
 
 .slick-guide-prev.slick-prev {
-    top: 40%;
     left: -10px;
     z-index: 5;
 }
 
 .slick-guide-next.slick-next {
-    top: 40%;
     right: 10px;
     z-index: 5;
 }
@@ -497,7 +587,7 @@ section:last-child {
     width: auto;
     z-index: 1;
     border-radius: 50%;
-    top: 30%;
+    top: 35%;
 }
 
 .list-tour-guide img:nth-child(2) {
@@ -505,13 +595,13 @@ section:last-child {
     z-index: 2;
     left: 10%;
     border-radius: 50%;
-    top: 30%;
+    top: 35%;
 }
 
 .list-tour-guide .more-tour-guide {
     z-index: 3;
-    left: 31%;
-    top: 35%;
+    left: 28%;
+    top: 40%;
     background: var(--clr-orange);
     color: white;
     border-radius: 5px;
@@ -735,9 +825,10 @@ section:last-child {
 
 .select2-selection__rendered {
     border-radius: 5px;
-
+    height: 35px;
+    padding-top: 4px;
 }
-/* 
-.select2-selection__arrow {
-    border-radius: 5px;
-} */
+
+.select2-container, .select2-selection--single {
+    height: 35px !important;
+}

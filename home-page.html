@@ -10,7 +10,15 @@
       type="text/css"
       href="https://ongvove.com/libs/daterange/daterangepicker.css"
     />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
     <link
       rel="stylesheet"
       href="./assets/libs/fontawesome/css/fontawesome.css"
@@ -218,117 +226,107 @@
               tabindex="0"
             >
               <form>
-                <div class="row">
+                <div class="row mt-3">
                   <div class="col-3 position-relative">
-                    <select id="address" class="form-select select-address" name="address">
+                    <select
+                      id="address"
+                      class="form-select select-service-address"
+                      name="service-address"
+                      style="height: 38px"
+                    >
+                      <option></option>
                       <option value="NT">Nha Trang</option>
                       <option value="HCM">Tp Hồ Chí Minh</option>
                       <option value="VT">Vũng Tàu</option>
                     </select>
                     <i class="fa-solid fa-location-dot group-icon"></i>
                   </div>
-
-                  <!-- <div class="input-group">
-                    <select id="address" class="form-select">
-                      <option>
-                        Địa điểm <i class="fa-solid fa-location-dot"></i>
-                      </option>
-                      <option>#1</option>
-                      <option>#2</option>
-                      <option>#3</option>
-                    </select>
-                    <span class="input-group-text" id="basic-addon1">
-                      <i class="fa-solid fa-location-dot"></i>
-                    </span>
-                  </div>
-
-                  <div class="date-group d-flex gap-2">
-                    <div class="input-group">
-                      <input
-                        class="startDate form-select datepicker"
-                        name="trip-start"
-                        placeholder="Từ ngày"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <input
-                        class="form-select"
-                        type="date"
-                        id="endDate"
-                        name="trip-end"
-                        placeholder="Đến ngày"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="date-group d-flex gap-2">
-                    <div class="input-group">
-                      <select id="guests" class="form-select">
-                        <option>
-                          Địa điểm <i class="fa-solid fa-location-dot"></i>
-                        </option>
-                        <option>#1</option>
-                        <option>#2</option>
-                        <option>#3</option>
-                      </select>
-                      <span class="input-group-text" id="basic-addon1">
-                        <i class="fa-solid fa-location-dot"></i>
-                      </span>
-                    </div>
-                    <button type="submit" class="btn btn-submit d-flex">
-                      Tìm kiếm <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                  </div> -->
-
-                  <!-- <div class="input-group mb-3">
+                  <div class="col-4 position-relative">
                     <input
-                      type="date"
-                      id="start"
-                      name="trip-start"
-                      placeholder="Từ ngày"
+                      type="text"
+                      class="form-control"
+                      id="startDate"
+                      name="range-service"
+                      style="padding-left: 55px"
                     />
-                    <span class="input-group-text" id="basic-addon1">
-                      <i class="fa-solid fa-calendar-days"></i>
-                    </span>
-                  </div> -->
-                  <!-- 
-                  <input
-                    type="date"
-                    id="end"
-                    name="trip-end"
-                    placeholder="Đến ngày"
-                  /> -->
-
-                  <!-- <div class="input-group mb-3">
-                    <input
-                      type="date"
-                      id="end"
-                      name="trip-end"
-                      placeholder="Đến ngày"
-                    />
-                    <span class="input-group-text" id="basic-addon1">
-                      <i class="fa-solid fa-calendar-days"></i>
-                    </span>
-                  </div> -->
-
-                  <!-- <select id="type-room" class="form-select">
-                    <option>1 người lớn, 0 trẻ con, 1 phòng</option>
-                    <option>#1</option>
-                    <option>#2</option>
-                    <option>#3</option>
-                  </select> -->
-
-                  <!-- <div class="input-group mb-3">
-                    <select id="type-room" class="form-select">
-                      <option>1 người lớn, 0 trẻ con, 1 phòng</option>
-                      <option>#1</option>
-                      <option>#2</option>
-                      <option>#3</option>
-                    </select>
-                    <span class="input-group-text" id="basic-addon1">
-                      <i class="fa-solid fa-user-group"></i>
-                    </span>
-                  </div> -->
+                    <i class="fa fa-calendar group-icon"></i>
+                  </div>
+                  <div class="col-5">
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="dropdown-center">
+                          <div
+                            class="form-control custom-btn position-relative"
+                            name="select-guest"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-auto-close="outside" aria-expanded="false"
+                          >
+                            <div class="render">
+                              <span class="adults"
+                              ><span class="one">1 người lớn</span>
+                              <span
+                                class="multi d-none"
+                                data-html=":count người lớn"
+                                >1 người lớn</span
+                              ></span
+                            >, 
+                            <span class="children">
+                              <span
+                                class="one d-none"
+                                data-html=":count trẻ con"
+                                >1 trẻ con</span
+                              >
+                              <span class="multi" data-html=":count trẻ con"
+                                >0 trẻ con</span
+                              >,<span class="rooms">
+                                <span
+                                  class="one d-none"
+                                  data-html=":count phòng"
+                                  >0 phòng</span
+                                >
+                                <span class="multi" data-html=":count phòng"
+                                  >1 phòng</span
+                                >
+                            </span>
+                            </div>
+                          </div>
+                          <i class="fa-solid fa-user-group group-icon"></i>
+                          <ul class="dropdown-menu dropdown-rooms">
+                            <li class="dropdown-item-row">
+                              <span class="label">Phòng</span>
+                              <div class="val">
+                                <span class="btn-minus" data-input="rooms"><i class="fa-solid fa-minus"></i></i></span>
+                                <span class="count-display"><input type="number" name="rooms" value="1" min="1"></span>
+                                <span class="btn-add" data-input="rooms"><i class="fa-solid fa-plus"></i></i></span>
+                              </div>
+                            </li>
+                            <li class="dropdown-item-row">
+                              <span class="label">Người lớn</span>
+                              <div class="val">
+                                <span class="btn-minus" data-input="adults"><i class="fa-solid fa-minus"></i></i></span>
+                                <span class="count-display"><input type="number" name="adults" value="1" min="1"></span>
+                                <span class="btn-add" data-input="adults"><i class="fa-solid fa-plus"></i></i></span>
+                              </div>
+                            </li>
+                            <li class="dropdown-item-row">
+                              <span class="label">Trẻ em</span>
+                              <div class="val">
+                                <span class="btn-minus" data-input="children"><i class="fa-solid fa-minus"></i></i></span>
+                                <span class="count-display"><input type="number" name="children" value="0" min="0"></span>
+                                <span class="btn-add" data-input="children"><i class="fa-solid fa-plus"></i></i></span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <button type="submit" class="btn btn-submit d-flex">
+                          Tìm kiếm <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </form>
             </div>
@@ -339,7 +337,46 @@
               aria-labelledby="tour-tab"
               tabindex="0"
             >
-              ...B
+            <form>
+              <div class="row mt-3">
+                <div class="col-3 position-relative">
+                  <!-- <select
+                    id="address"
+                    class="form-select select-tour-address"
+                    name="tour-address"
+                    style="height: 38px"
+                  >
+                    <option></option>
+                    <option value="NT">Nha Trang</option>
+                    <option value="HCM">Tp Hồ Chí Minh</option>
+                    <option value="VT">Vũng Tàu</option>
+                  </select> -->
+                  <i class="fa-solid fa-location-dot group-icon"></i>
+                </div>
+                <div class="col-4 position-relative">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="startDate"
+                    name="range-tour"
+                    style="padding-left: 55px"
+                  />
+                  <i class="fa fa-calendar group-icon"></i>
+                </div>
+                <div class="col-5">
+                  <div class="row">
+                    <div class="col-8">
+                      <input type="text" class="form-control" name="search-tour" placeholder="Tìm kiếm sự kiện">
+                    </div>
+                    <div class="col-4">
+                      <button type="submit" class="btn btn-submit d-flex">
+                        Tìm kiếm <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
             </div>
             <div
               class="tab-pane fade"
@@ -368,8 +405,8 @@
           <p class="topic">TOUR NỔI BẬT</p>
           <div class="tour-row">
             <div class="row align-items-center">
-              <div class="col-11">
-                <div class="px-5">
+              <div class="col-10">
+                <div class="test ps-5 pe-5">
                   <ul
                     class="nav nav-underline nav-tours b-2"
                     id="tabs"
@@ -518,7 +555,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="col-1 text-end">
+              <div class="col-2 text-end">
                 <a href="#" class="see-more">Xem tất cả</a>
               </div>
             </div>
@@ -2431,7 +2468,14 @@
     ></script>
     <script type="text/javascript" src="./assets/libs/slick/slick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
     <script type="text/javascript" src="./assets/js/home.js"></script>
   </body>
 </html>
