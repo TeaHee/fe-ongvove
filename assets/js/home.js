@@ -107,102 +107,295 @@ $(document).ready(function () {
         dropdownAutoWidth: true
     });
 
-    $('.select-tour-address').select2({
-        placeholder: "Địa điểm",
-        matcher: matchCustom,
-        dropdownAutoWidth: true
+    // $('.select-tour-address').select2({
+    //     placeholder: "Địa điểm",
+    //     matcher: matchCustom,
+    //     dropdownAutoWidth: true
+    // });
+});
+
+// $(document).ready(function () {
+//     $('.select-tour-address').select2({
+//         placeholder: "Địa điểm",
+//         matcher: matchCustom,
+//         dropdownAutoWidth: true
+//     });
+// });
+
+$(document).ready(function () {
+    $("#endDateService").addClass("disable-custom");
+
+    $('#startDateService').daterangepicker({
+        autoUpdateInput: false,
+        singleDatePicker: true,
+        showDropdowns: true,
+        opens: 'center',
+        drops: "auto",
+        autoApply: true,
+        locale: {
+            "format": "DD/MM/YYYY",
+            "separator": " đến ",
+            "applyLabel": "",
+            "cancelLabel": "",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "CN",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7"
+            ],
+            "monthNames": [
+                "Tháng 1",
+                "Tháng 2",
+                "Tháng 3",
+                "Tháng 4",
+                "Tháng 5",
+                "Tháng 6",
+                "Tháng 7",
+                "Tháng 8",
+                "Tháng 9",
+                "Tháng 10",
+                "Tháng 11",
+                "Tháng 12"
+            ],
+            "firstDay": 1
+        },
+    }, function (start, end, label) {
+        $("#endDateService").removeClass("disable-custom");
+        $('#endDateService').data('daterangepicker').minDate = start
+    });
+
+    $('#endDateService').daterangepicker({
+        autoUpdateInput: false,
+        singleDatePicker: true,
+        opens: 'center',
+        drops: "auto",
+        showDropdowns: true,
+        autoApply: true,
+        locale: {
+            "format": "DD/MM/YYYY",
+            "separator": " đến ",
+            "applyLabel": "",
+            "cancelLabel": "",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "CN",
+                "T2",
+                "T3",
+                "T4",
+                "T5",
+                "T6",
+                "T7"
+            ],
+            "monthNames": [
+                "Tháng 1",
+                "Tháng 2",
+                "Tháng 3",
+                "Tháng 4",
+                "Tháng 5",
+                "Tháng 6",
+                "Tháng 7",
+                "Tháng 8",
+                "Tháng 9",
+                "Tháng 10",
+                "Tháng 11",
+                "Tháng 12"
+            ],
+            "firstDay": 1
+        },
+    });
+
+    $('#startDateService').on('apply.daterangepicker', function (ev, picker) {
+        $(this).val(picker.startDate.format('DD/MM/YYYY'));
+    });
+
+    $('#endDateService').on('apply.daterangepicker', function (ev, picker) {
+        $(this).val(picker.startDate.format('DD/MM/YYYY'));
     });
 });
 
 // $(document).ready(function () {
-    
+//     $('input[name="startDateTour"]').daterangepicker({
+//         singleDatePicker: true,
+//         opens: 'center',
+//         drops: "auto",
+//         autoApply: true,
+//         locale: {
+//             "format": "DD/MM/YYYY",
+//             "separator": " đến ",
+//             "applyLabel": "",
+//             "cancelLabel": "",
+//             "fromLabel": "From",
+//             "toLabel": "To",
+//             "customRangeLabel": "Custom",
+//             "weekLabel": "W",
+//             "daysOfWeek": [
+//                 "CN",
+//                 "T2",
+//                 "T3",
+//                 "T4",
+//                 "T5",
+//                 "T6",
+//                 "T7"
+//             ],
+//             "monthNames": [
+//                 "Tháng 1",
+//                 "Tháng 2",
+//                 "Tháng 3",
+//                 "Tháng 4",
+//                 "Tháng 5",
+//                 "Tháng 6",
+//                 "Tháng 7",
+//                 "Tháng 8",
+//                 "Tháng 9",
+//                 "Tháng 10",
+//                 "Tháng 11",
+//                 "Tháng 12"
+//             ],
+//             "firstDay": 1
+//         },
+//     }, function (start, end, label) {
+//         if (start) {
+//             $('input[name="endDateTour"]').prop('disabled', false);
+
+//             $('input[name="endDateTour"]').daterangepicker({
+//                 minDate: start,
+//                 showDropdowns: true,
+//                 singleDatePicker: true,
+//                 opens: 'center',
+//                 drops: "auto",
+//                 autoApply: true,
+//                 locale: {
+//                     "format": "DD/MM/YYYY",
+//                     "separator": " đến ",
+//                     "applyLabel": "",
+//                     "cancelLabel": "",
+//                     "fromLabel": "From",
+//                     "toLabel": "To",
+//                     "customRangeLabel": "Custom",
+//                     "weekLabel": "W",
+//                     "daysOfWeek": [
+//                         "CN",
+//                         "T2",
+//                         "T3",
+//                         "T4",
+//                         "T5",
+//                         "T6",
+//                         "T7"
+//                     ],
+//                     "monthNames": [
+//                         "Tháng 1",
+//                         "Tháng 2",
+//                         "Tháng 3",
+//                         "Tháng 4",
+//                         "Tháng 5",
+//                         "Tháng 6",
+//                         "Tháng 7",
+//                         "Tháng 8",
+//                         "Tháng 9",
+//                         "Tháng 10",
+//                         "Tháng 11",
+//                         "Tháng 12"
+//                     ],
+//                     "firstDay": 1
+//                 },
+//             })
+//         }
+//     });
+
+//     $('input[name="endDateTour"]').daterangepicker({
+//         singleDatePicker: true,
+//         opens: 'center',
+//         drops: "auto",
+//         autoApply: true,
+//         locale: {
+//             "format": "DD/MM/YYYY",
+//             "separator": " đến ",
+//             "applyLabel": "",
+//             "cancelLabel": "",
+//             "fromLabel": "From",
+//             "toLabel": "To",
+//             "customRangeLabel": "Custom",
+//             "weekLabel": "W",
+//             "daysOfWeek": [
+//                 "CN",
+//                 "T2",
+//                 "T3",
+//                 "T4",
+//                 "T5",
+//                 "T6",
+//                 "T7"
+//             ],
+//             "monthNames": [
+//                 "Tháng 1",
+//                 "Tháng 2",
+//                 "Tháng 3",
+//                 "Tháng 4",
+//                 "Tháng 5",
+//                 "Tháng 6",
+//                 "Tháng 7",
+//                 "Tháng 8",
+//                 "Tháng 9",
+//                 "Tháng 10",
+//                 "Tháng 11",
+//                 "Tháng 12"
+//             ],
+//             "firstDay": 1
+//         },
+//     });
 // });
 
-$(document).ready(function () {
-    $('input[name="range-service"]').daterangepicker({
-        showDropdowns: true,
-        opens: 'center',
-        drops: "auto",
-        autoApply: true,
-        locale: {
-            "format": "DD/MM/YYYY",
-            "separator": " đến ",
-            "applyLabel": "",
-            "cancelLabel": "",
-            "fromLabel": "From",
-            "toLabel": "To",
-            "customRangeLabel": "Custom",
-            "weekLabel": "W",
-            "daysOfWeek": [
-                "CN",
-                "T2",
-                "T3",
-                "T4",
-                "T5",
-                "T6",
-                "T7"
-            ],
-            "monthNames": [
-                "Tháng 1",
-                "Tháng 2",
-                "Tháng 3",
-                "Tháng 4",
-                "Tháng 5",
-                "Tháng 6",
-                "Tháng 7",
-                "Tháng 8",
-                "Tháng 9",
-                "Tháng 10",
-                "Tháng 11",
-                "Tháng 12"
-            ],
-            "firstDay": 1
-        },
-    });
-});
-
-$(document).ready(function () {
-    $('input[name="range-tour"]').daterangepicker({
-        showDropdowns: true,
-        opens: 'center',
-        drops: "auto",
-        autoApply: true,
-        locale: {
-            "format": "DD/MM/YYYY",
-            "separator": " đến ",
-            "applyLabel": "",
-            "cancelLabel": "",
-            "fromLabel": "From",
-            "toLabel": "To",
-            "customRangeLabel": "Custom",
-            "weekLabel": "W",
-            "daysOfWeek": [
-                "CN",
-                "T2",
-                "T3",
-                "T4",
-                "T5",
-                "T6",
-                "T7"
-            ],
-            "monthNames": [
-                "Tháng 1",
-                "Tháng 2",
-                "Tháng 3",
-                "Tháng 4",
-                "Tháng 5",
-                "Tháng 6",
-                "Tháng 7",
-                "Tháng 8",
-                "Tháng 9",
-                "Tháng 10",
-                "Tháng 11",
-                "Tháng 12"
-            ],
-            "firstDay": 1
-        },
-    });
-});
+// $(document).ready(function () {
+//     $('input[name="range-tour"]').daterangepicker({
+//         showDropdowns: true,
+//         opens: 'center',
+//         drops: "auto",
+//         autoApply: true,
+//         locale: {
+//             "format": "DD/MM/YYYY",
+//             "separator": " đến ",
+//             "applyLabel": "",
+//             "cancelLabel": "",
+//             "fromLabel": "From",
+//             "toLabel": "To",
+//             "customRangeLabel": "Custom",
+//             "weekLabel": "W",
+//             "daysOfWeek": [
+//                 "CN",
+//                 "T2",
+//                 "T3",
+//                 "T4",
+//                 "T5",
+//                 "T6",
+//                 "T7"
+//             ],
+//             "monthNames": [
+//                 "Tháng 1",
+//                 "Tháng 2",
+//                 "Tháng 3",
+//                 "Tháng 4",
+//                 "Tháng 5",
+//                 "Tháng 6",
+//                 "Tháng 7",
+//                 "Tháng 8",
+//                 "Tháng 9",
+//                 "Tháng 10",
+//                 "Tháng 11",
+//                 "Tháng 12"
+//             ],
+//             "firstDay": 1
+//         },
+//     });
+// });
 
 $(document).ready(function () {
     $('.dropdown-rooms .btn-minus').click(function (e) {

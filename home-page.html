@@ -241,15 +241,17 @@
                     </select>
                     <i class="fa-solid fa-location-dot group-icon"></i>
                   </div>
-                  <div class="col-4 position-relative">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="startDate"
-                      name="range-service"
-                      style="padding-left: 55px"
-                    />
-                    <i class="fa fa-calendar group-icon"></i>
+                  <div class="col-4">
+                    <div class="row">
+                      <div class="col-6 position-relative">
+                        <input id="startDateService" class="form-control input-date" type="text" value="" placeholder="Từ ngày"/>
+                        <i class="fa fa-calendar group-icon"></i>
+                      </div>
+                      <div class="col-6 position-relative">
+                        <input id="endDateService" class="form-control input-date" type="text" value="" placeholder="Đến ngày"/>
+                        <i class="fa fa-calendar group-icon"></i>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-5">
                     <div class="row">
@@ -335,12 +337,12 @@
               id="tour-tab-pane"
               role="tabpanel"
               aria-labelledby="tour-tab"
-              tabindex="0"
+              tabindex="1"
             >
-            <form>
+            <!-- <form>
               <div class="row mt-3">
                 <div class="col-3 position-relative">
-                  <!-- <select
+                  <select
                     id="address"
                     class="form-select select-tour-address"
                     name="tour-address"
@@ -350,18 +352,30 @@
                     <option value="NT">Nha Trang</option>
                     <option value="HCM">Tp Hồ Chí Minh</option>
                     <option value="VT">Vũng Tàu</option>
-                  </select> -->
+                  </select>
                   <i class="fa-solid fa-location-dot group-icon"></i>
                 </div>
-                <div class="col-4 position-relative">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="startDate"
-                    name="range-tour"
-                    style="padding-left: 55px"
-                  />
-                  <i class="fa fa-calendar group-icon"></i>
+                <div class="col-4">
+                  <div class="row">
+                    <div class="col-6 position-relative">
+                      <input
+                      type="text"
+                      class="form-control"
+                      id="startDate"
+                      name="startDateTour"
+                    />
+                    <i class="fa fa-calendar group-icon"></i>
+                    </div>
+                    <div class="col-6 position-relative">
+                      <input
+                      type="text"
+                      class="form-control"
+                      id="endDate"
+                      name="endDateTour"
+                    />
+                    <i class="fa fa-calendar group-icon"></i>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-5">
                   <div class="row">
@@ -376,14 +390,14 @@
                   </div>
                 </div>
               </div>
-            </form>
+            </form> -->
             </div>
             <div
               class="tab-pane fade"
               id="event-tab-pane"
               role="tabpanel"
               aria-labelledby="event-tab"
-              tabindex="0"
+              tabindex="2"
             >
               ...C
             </div>
@@ -392,7 +406,7 @@
               id="instruct-tab-pane"
               role="tabpanel"
               aria-labelledby="instruct-tab"
-              tabindex="0"
+              tabindex="3"
             >
               ...D
             </div>

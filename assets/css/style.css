@@ -69,6 +69,11 @@ img {
     background-color: var(--clr-pink);
 }
 
+.disable-custom {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
 body {
     font-family: "Inter";
 }
@@ -195,14 +200,16 @@ section:last-child {
     background-color: #F5F5F5F5;
 }
 
-#startDate, #endDate {
+.input-date, .input-date::placeholder {
     --bs-form-select-bg-img: none;
     border: none;
     color: var(--clr-orange);
     background-color: #F5F5F5F5;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
 }
 
-#startDate:hover {
+.input-date:hover {
     cursor: pointer;
 }
 
@@ -212,6 +219,9 @@ section:last-child {
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
+    padding: 4px 12px;
 }
 
 .btn-submit:hover {
@@ -223,6 +233,8 @@ section:last-child {
     color: var(--clr-orange);
     border: none;
     background-color: #F5F5F5F5;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
 }
 
 .custom-btn:focus {
@@ -290,6 +302,7 @@ section:last-child {
     width: 35px;
     border-radius: 5px;
     text-align: center;
+    border-color: rgba(0, 0, 0, 0.3);
 }
 /*  */
 
@@ -788,7 +801,7 @@ section:last-child {
 
 .list-payment {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto auto auto;
     gap: 0.5rem;
 }
 
@@ -816,6 +829,8 @@ section:last-child {
 
 .select2-selection__placeholder, .select2-selection__rendered {
     color: var(--clr-orange) !important;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-400);
 }
 
 .select2-selection--single {
