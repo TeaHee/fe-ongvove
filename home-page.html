@@ -36,7 +36,7 @@
       type="text/css"
       href="./assets/libs/slick/slick-theme.css"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/home.css" />
   </head>
   <body>
     <header>
@@ -143,8 +143,7 @@
           </div>
         </div>
       </nav>
-    </header>
-
+    </header> 
     <main>
       <section class="search">
         <div class="bg-banner pt-5">
@@ -227,12 +226,11 @@
             >
               <form>
                 <div class="row mt-3">
-                  <div class="col-3 position-relative">
+                  <div class="col-3 line">
                     <select
-                      id="address"
-                      class="form-select select-service-address"
+                      class="form-select select-location"
                       name="service-address"
-                      style="height: 38px"
+                      style="height: 38px; width: 100%"
                     >
                       <option></option>
                       <option value="NT">Nha Trang</option>
@@ -241,7 +239,7 @@
                     </select>
                     <i class="fa-solid fa-location-dot group-icon"></i>
                   </div>
-                  <div class="col-4">
+                  <div class="col-4 line">
                     <div class="row">
                       <div class="col-6 position-relative">
                         <input id="startDateService" class="form-control input-date" type="text" value="" placeholder="Từ ngày"/>
@@ -253,7 +251,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-5">
+                  <div class="col-5 line">
                     <div class="row">
                       <div class="col-8">
                         <div class="dropdown-center">
@@ -339,14 +337,13 @@
               aria-labelledby="tour-tab"
               tabindex="1"
             >
-            <!-- <form>
+            <form>
               <div class="row mt-3">
-                <div class="col-3 position-relative">
+                <div class="col-3 line">
                   <select
-                    id="address"
-                    class="form-select select-tour-address"
+                    class="form-select select-location"
                     name="tour-address"
-                    style="height: 38px"
+                    style="height: 38px; width: 100%"
                   >
                     <option></option>
                     <option value="NT">Nha Trang</option>
@@ -355,32 +352,26 @@
                   </select>
                   <i class="fa-solid fa-location-dot group-icon"></i>
                 </div>
-                <div class="col-4">
+                <div class="col-4 line">
                   <div class="row">
                     <div class="col-6 position-relative">
-                      <input
-                      type="text"
-                      class="form-control"
-                      id="startDate"
-                      name="startDateTour"
-                    />
-                    <i class="fa fa-calendar group-icon"></i>
+                      <input id="startDateTour" class="form-control input-date" type="text" value="" placeholder="Từ ngày"/>
+                      <i class="fa fa-calendar group-icon"></i>
                     </div>
                     <div class="col-6 position-relative">
-                      <input
-                      type="text"
-                      class="form-control"
-                      id="endDate"
-                      name="endDateTour"
-                    />
-                    <i class="fa fa-calendar group-icon"></i>
+                      <input id="endDateTour" class="form-control input-date" type="text" value="" placeholder="Đến ngày"/>
+                      <i class="fa fa-calendar group-icon"></i>
                     </div>
                   </div>
                 </div>
-                <div class="col-5">
+                <div class="col-5 line">
                   <div class="row">
-                    <div class="col-8">
-                      <input type="text" class="form-control" name="search-tour" placeholder="Tìm kiếm sự kiện">
+                    <div class="col-8 position-relative">
+                      <input type="text" class="form-control input-group-text input-search" name="search-tour" placeholder="Tìm kiếm sự kiện">
+                      <i class="fa-solid fa-magnifying-glass position-absolute" style="
+                      right: 25px;
+                      top: 11px;
+                      color: rgba(217, 217, 217, 1);"></i>
                     </div>
                     <div class="col-4">
                       <button type="submit" class="btn btn-submit d-flex">
@@ -390,7 +381,7 @@
                   </div>
                 </div>
               </div>
-            </form> -->
+            </form>
             </div>
             <div
               class="tab-pane fade"
@@ -399,7 +390,51 @@
               aria-labelledby="event-tab"
               tabindex="2"
             >
-              ...C
+            <form>
+              <div class="row mt-3">
+                <div class="col-3 line">
+                  <select
+                    class="form-select select-location"
+                    name="event-address"
+                    style="height: 38px; width: 100%"
+                  >
+                    <option></option>
+                    <option value="NT">Nha Trang</option>
+                    <option value="HCM">Tp Hồ Chí Minh</option>
+                    <option value="VT">Vũng Tàu</option>
+                  </select>
+                  <i class="fa-solid fa-location-dot group-icon"></i>
+                </div>
+                <div class="col-4 line">
+                  <div class="row">
+                    <div class="col-6 position-relative">
+                      <input id="startDateEvent" class="form-control input-date" type="text" value="" placeholder="Từ ngày"/>
+                      <i class="fa fa-calendar group-icon"></i>
+                    </div>
+                    <div class="col-6 position-relative">
+                      <input id="endDateEvent" class="form-control input-date" type="text" value="" placeholder="Đến ngày"/>
+                      <i class="fa fa-calendar group-icon"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5 line">
+                  <div class="row">
+                    <div class="col-8 position-relative">
+                      <input type="text" class="form-control input-group-text input-search" name="search-event" placeholder="Tìm kiếm sự kiện">
+                      <i class="fa-solid fa-magnifying-glass position-absolute" style="
+                      right: 25px;
+                      top: 11px;
+                      color: rgba(217, 217, 217, 1);"></i>
+                    </div>
+                    <div class="col-4">
+                      <button type="submit" class="btn btn-submit d-flex">
+                        Tìm kiếm <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
             </div>
             <div
               class="tab-pane fade"
@@ -408,7 +443,45 @@
               aria-labelledby="instruct-tab"
               tabindex="3"
             >
-              ...D
+            <form>
+              <div class="row mt-3">
+                <div class="col-3 line">
+                  <select
+                    class="form-select select-location"
+                    name="event-address"
+                    style="height: 38px; width: 100%"
+                  >
+                    <option></option>
+                    <option value="NT">Nha Trang</option>
+                    <option value="HCM">Tp Hồ Chí Minh</option>
+                    <option value="VT">Vũng Tàu</option>
+                  </select>
+                  <i class="fa-solid fa-location-dot group-icon"></i>
+                </div>
+                <div class="col-9">
+                  <div class="row">
+                    <div class="col-10 line">
+                      <select
+                        class="form-select select-language"
+                        name="language"
+                        style="height: 38px; width: 100%"
+                      >
+                        <option></option>
+                        <option value="NT">Việt Nam</option>
+                        <option value="HCM">Hàn Quốc</option>
+                        <option value="VT">Trung Quốc</option>
+                      </select>
+                      <i class="fa-solid fa-language group-icon"></i>
+                    </div>
+                    <div class="col-2">
+                      <button type="submit" class="btn btn-submit d-flex">
+                        Tìm kiếm <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
             </div>
           </div>
         </div>
@@ -422,13 +495,13 @@
               <div class="col-10">
                 <div class="test ps-5 pe-5">
                   <ul
-                    class="nav nav-underline nav-tours b-2"
+                    class="nav nav-tours b-2"
                     id="tabs"
                     role="tablist"
                   >
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link active"
+                        class="menu-tab nav-link active"
                         id="da-lat"
                         data-bs-toggle="tab"
                         data-bs-target="#da-lat-tab"
@@ -442,7 +515,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="nha-trang"
                         data-bs-toggle="tab"
                         data-bs-target="#nha-trang-tab"
@@ -456,7 +529,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="da-nang"
                         data-bs-toggle="tab"
                         data-bs-target="#da-nang-tab"
@@ -470,7 +543,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="vung-tau"
                         data-bs-toggle="tab"
                         data-bs-target="#05-tab-pane"
@@ -484,7 +557,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="ha-giang"
                         data-bs-toggle="tab"
                         data-bs-target="#05-tab-pane"
@@ -498,7 +571,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="ha-noi"
                         data-bs-toggle="tab"
                         data-bs-target="#06-tab-pane"
@@ -512,7 +585,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="can-tho"
                         data-bs-toggle="tab"
                         data-bs-target="#07-tab-pane"
@@ -526,7 +599,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="moc-chau"
                         data-bs-toggle="tab"
                         data-bs-target="#08-tab-pane"
@@ -540,7 +613,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="hcm"
                         data-bs-toggle="tab"
                         data-bs-target="#09-tab-pane"
@@ -554,7 +627,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                       <button
-                        class="nav-link"
+                        class="menu-tab nav-link"
                         id="dai-loan"
                         data-bs-toggle="tab"
                         data-bs-target="#10-tab-pane"
@@ -951,10 +1024,10 @@
           <p class="topic">SỰ KIỆN NỔI BẬT</p>
           <div class="event-row d-flex align-items-center">
             <div class="flex-fill">
-              <ul class="nav nav-underline pb-2" id="tabs" role="tablist">
+              <ul class="nav pb-2" id="tabs" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link active"
+                    class="menu-tab nav-link active"
                     id="hoi-thao"
                     data-bs-toggle="tab"
                     data-bs-target="#hoi-thao-tab"
@@ -968,7 +1041,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="san-khau"
                     data-bs-toggle="tab"
                     data-bs-target="#san-khau-tab"
@@ -982,7 +1055,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="hoa-nhac"
                     data-bs-toggle="tab"
                     data-bs-target="#hoa-nhac-tab"
@@ -1442,10 +1515,10 @@
           <p class="topic">KHÁCH SẠN NỔI BẬT</p>
           <div class="event-row d-flex align-items-center">
             <div class="flex-fill">
-              <ul class="nav nav-underline pb-2" id="tabs" role="tablist">
+              <ul class="nav pb-2" id="tabs" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link active"
+                    class="menu-tab nav-link active"
                     id="ks-da-lat"
                     data-bs-toggle="tab"
                     data-bs-target="#ks-da-lat-tab"
@@ -1459,7 +1532,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="ks-nha-trang"
                     data-bs-toggle="tab"
                     data-bs-target="#ks-nha-trang-tab"
@@ -1473,7 +1546,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="ks-da-nang"
                     data-bs-toggle="tab"
                     data-bs-target="#ks-da-nang-tab"
@@ -1487,7 +1560,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="ks-vung-tau"
                     data-bs-toggle="tab"
                     data-bs-target="#ks-vung-tau-tab"
@@ -1831,10 +1904,10 @@
           <p class="topic">HƯỚNG DẪN VIÊN NỔI BẬT</p>
           <div class="event-row d-flex align-items-center">
             <div class="flex-fill">
-              <ul class="nav nav-underline pb-2" id="tabs" role="tablist">
+              <ul class="nav pb-2" id="tabs" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link active"
+                    class="menu-tab nav-link active"
                     id="guide-da-lat"
                     data-bs-toggle="tab"
                     data-bs-target="#guide-da-lat-tab"
@@ -1848,7 +1921,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="guide-ha-giang"
                     data-bs-toggle="tab"
                     data-bs-target="#guide-ha-giang-tab"
@@ -1862,7 +1935,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="guide-hcm"
                     data-bs-toggle="tab"
                     data-bs-target="#guide-hcm-tab"
@@ -1876,7 +1949,7 @@
                 </li>
                 <li class="nav-item" role="presentation">
                   <button
-                    class="nav-link"
+                    class="menu-tab nav-link"
                     id="guide-vung-tau"
                     data-bs-toggle="tab"
                     data-bs-target="#guide-vung-tau-tab"
@@ -2155,10 +2228,10 @@
       <section class="blog">
         <div class="container">
           <p class="topic">BLOG</p>
-          <ul class="nav nav-underline pb-2" id="tabs" role="tablist">
+          <ul class="nav pb-2" id="tabs" role="tablist">
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link active"
+                class="menu-tab nav-link active"
                 id="exp-tour"
                 data-bs-toggle="tab"
                 data-bs-target="#exp-tour-tab"
@@ -2172,7 +2245,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="menu-tab nav-link"
                 id="share"
                 data-bs-toggle="tab"
                 data-bs-target="#share-tab"
@@ -2186,7 +2259,7 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link"
+                class="menu-tab nav-link"
                 id="our-guide"
                 data-bs-toggle="tab"
                 data-bs-target="#our-guide-tab"
